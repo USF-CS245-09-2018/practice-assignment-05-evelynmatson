@@ -3,15 +3,24 @@ import java.util.Arrays;
 public class MergeSort implements SortingAlgorithm {
 	public void sort(int[] a) {
 		// Base case: If size = 1, return the array
-		if (a.length == 1) {
+		if (a.length <= 1) {
 			return;
 		}
 
 		// Iterative step: recurse, then merge
+
+		// System.out.println("\tSort Running! Array: " + Arrays.toString(a));
+
 		int[] leftHalf = Arrays.copyOfRange(a, 0, a.length/2);
+		// System.out.println("\t\tLeft Half: " + Arrays.toString(leftHalf));
 		sort(leftHalf);
-		int[] rightHalf = Arrays.copyOfRange(a, a.length/2, a.length-1);
+		int[] rightHalf = Arrays.copyOfRange(a, a.length/2, a.length);
+		// System.out.println("\t\tRight Half: " + Arrays.toString(rightHalf));
 		sort(rightHalf);
+
+		// System.out.println("\t\tLeft Half Sorted: " + Arrays.toString(leftHalf));
+		// System.out.println("\t\tRight Half Sorted: " + Arrays.toString(rightHalf));
+
 
 		int l = 0;	// moving along left array
 		int r = 0;	// moving along right array
@@ -51,6 +60,11 @@ public class MergeSort implements SortingAlgorithm {
 		arrayToTest[2] = 9;
 		arrayToTest[3] = -4;
 		arrayToTest[4] = 12;
+		// arrayToTest[5] = 5;
+		// arrayToTest[6] = 3;
+		// arrayToTest[7] = 9;
+		// arrayToTest[8] = -4;
+		// arrayToTest[9] = 12;
 
 		// System.out.println("Started as: " + Arrays.toString(arrayToTest));
 		SortingAlgorithm sorter = new MergeSort();
