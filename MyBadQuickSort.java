@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class QuickSort { // implements SortingAlgorithm {
+public class QuickSort implements SortingAlgorithm {
 
 	public void sort(int[] a, int start, int end) {		// INCLUSIVE ON BOTH ENDS
 
@@ -20,7 +20,6 @@ public class QuickSort { // implements SortingAlgorithm {
 
 
 		// Iterate through the array starting at the left
-		/*  Original Eve code
 		for (left=left;left<right;left++) {
 			// Check if we found an item on the left that should be on the right
 			if (a[left] > a[pivot]) {
@@ -36,25 +35,8 @@ public class QuickSort { // implements SortingAlgorithm {
 				swap(a,right,left);
 			}
 		}
-		*/
-		
-		while (left < right) {
-			while (left < end && a[left]  <= a[pivot]) {
-				++left;
-			}
-			while (right >= left && a[right] > a[pivot]) {  // May be off by 1
-				--right;
-			}
-			if  (left <= end && left < right)
-				swap(a, left, right);
-		}
-		
-		swap(a, right, pivot);  // Get this correct
-		int center = right;
-		sort(a, start, center-1);
-		sort(a, center+1, end);
 
-/*
+
 		int center;
 		// Once theyve overlapped!
 		if (a[left] < a[pivot]) {		// If the center value is less than pivot
@@ -76,7 +58,7 @@ public class QuickSort { // implements SortingAlgorithm {
 		// System.out.println("\tAbout to recurse. "+start+" through " + (center-1) + " and " + (center+1) + " through " + end + "\n");
 		sort(a,start,center-1);		// Left half
 		sort(a,center+1,end);			// Right half
-*/
+
 
 
 	}
@@ -159,8 +141,7 @@ public class QuickSort { // implements SortingAlgorithm {
 
 
 		System.out.println("Started as: " + Arrays.toString(arrayToTest));
-		// SortingAlgorithm sorter = new QuickSort();
-		QuickSort sorter = new QuickSort();
+		SortingAlgorithm sorter = new QuickSort();
 		sorter.sort(arrayToTest);
 		System.out.println("Finished as: " + Arrays.toString(arrayToTest));
 
