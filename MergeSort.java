@@ -66,9 +66,9 @@ public class MergeSort implements SortingAlgorithm {
 		// arrayToTest[8] = -4;
 		// arrayToTest[9] = 12;
 
-		// System.out.println("Started as: " + Arrays.toString(arrayToTest));
+		System.out.println("Started as: " + Arrays.toString(arrayToTest));
 		SortingAlgorithm sorter = new MergeSort();
 		sorter.sort(arrayToTest);
-		// System.out.println("Finished as: " + Arrays.toString(arrayToTest));
+		System.out.println("Finished as: " + Arrays.toString(arrayToTest));
 	}
 }
