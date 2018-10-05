@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class QuickSort implements SortingAlgorithm {
+public class MyBadQuickSort implements SortingAlgorithm {
 
 	public void sort(int[] a, int start, int end) {		// INCLUSIVE ON BOTH ENDS
 
